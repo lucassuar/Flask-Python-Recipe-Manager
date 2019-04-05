@@ -11,9 +11,18 @@
     
     <body>
         <h1>Outside!</h1>
-        {% block recipes %}
+        {% block content %}
         {% endblock %}
         
+   <!--JavaScript components-->   
+       <!--Category selector: Add_recipe page-->  
+        <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    var elems = document.querySelectorAll('select');
+                    var instances = M.FormSelect.init(elems);
+                });
+        </script> 
+         
         
     <!--JavaScript at end of body for optimized loading-->
           <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

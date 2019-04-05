@@ -1,0 +1,60 @@
+{% extends 'base.html' %} {% block content %}
+    <h3>Add Recipe</h3>
+    
+  <div class="row">
+    <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
+        
+     <div class="row">   
+        <div class="input-field col s12">
+            <i class="material-icons prefix">local_dining</i>
+            <select id="category_name" name="category_name">
+              <option value="" disabled selected>Choose a Crusine</option>
+               {% for cat in categories %}
+                      <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+               {% endfor %}
+            </select>
+            <label>Type of Crusine</label>
+        </div>
+     </div>
+     
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">label_outline</i>
+          <input id="recipe_name" name="recipe_name" type="text" class="validate">
+          <label for="icon_prefix"> Recipe Name </label>
+        </div>
+        
+        <div class="input-field col s12">
+          <i class="material-icons prefix">list</i>
+          <input id="ingredients" name="ingredients" type="text" class="validate">
+          <label for="icon_prefix"> Ingredients </label>
+        </div>
+        
+        <div class="input-field col s12">
+          <i class="material-icons prefix">local_pizza</i>
+          <input id="description" name="description" type="text" class="validate">
+          <label for="icon_prefix"> How to Make it? </label>
+        </div>
+        
+        <div class="input-field col s12">
+          <i class="material-icons prefix">access_time</i>
+          <input id="preparation_time" name="preparation_time" type="text" class="validate">
+          <label for="icon_prefix"> Preparation Time </label>
+        </div>
+        
+        <div class="input-field col s12">
+          <i class="material-icons prefix">local_see</i>
+          <input id="photo_url" name="photo_url" type="text" class="validate">
+          <label for="icon_prefix"> Photo URL </label>
+        </div>
+        
+        <div class="row">
+            <button class="btn waves-effect deep-orange lighten-2" type="submit" name="action">Add Recipe
+                <i class="material-icons right">local_dining</i>
+             </button>
+        </div>
+        
+      </div>
+    </form>
+  </div>
+{% endblock %}
