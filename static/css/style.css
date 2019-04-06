@@ -1,38 +1,19 @@
-.descript {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 240px;
+.links-botton-card > a {
+    color: #c5c5c5;
+    font-size: small;
 }
 
+body {
+    background-color: #c5c5c5;
+    margin: 0, 10%, 0, 10%;
+}
 
+#cruisine-tag > p {
+    display: inline-block;
+}
 
-/*________ Form Styles _________*/
-
- /* label color */
-   .input-field label {
-     color: #000;
-   }
-   /* label focus color */
-   .input-field input[type=text]:focus + label {
-     color: #000;
-   }
-   /* label underline focus color */
-   .input-field input[type=text]:focus {
-     border-bottom: 1px solid #000;
-     box-shadow: 0 1px 0 0 #000;
-   }
-   /* valid color */
-   .input-field input[type=text].valid {
-     border-bottom: 1px solid #000;
-     box-shadow: 0 1px 0 0 #000;
-   }
-   /* invalid color */
-   .input-field input[type=text].invalid {
-     border-bottom: 1px solid #000;
-     box-shadow: 0 1px 0 0 #000;
-   }
-   /* icon prefix focus color */
-   .input-field .prefix.active {
-     color: #000;
-   }
+.card-image-img {
+    width: 100%;
+    height: 14vw;
+    object-fit: cover;
+}
