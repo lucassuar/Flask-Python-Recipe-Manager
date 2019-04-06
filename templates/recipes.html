@@ -16,7 +16,7 @@
                 
                 <div class="card-content red lighten-5 links-botton-card">
                   <div id="cruisine-tag"><p>Cruisine:</p><p id="category">{{recipe.category_name}}</p></div>
-                  <a class="edit-item-link" href="{{url_for('edit_recipe', recipe_id=recipe._id)}}">Edit</a> <a class="delete-item-link"href="#">Delete</a>
+                  <a class="edit-item-link" href="{{url_for('edit_recipe', recipe_id=recipe._id)}}">Edit</a> <a class="delete-item-link"href="{{url_for('delete_recipe', recipe_id=recipe._id)}}">Delete</a>
                 </div>
                 
               </div>
