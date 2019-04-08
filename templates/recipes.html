@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="row">
+
+<div class="container">
+<div class="row recipes-list">
     {% for recipe in recipes %}
-            <div class="col s12 m6 l3">
+            <div class="col s12 m6 l4 offset-s2">
               <div class="card">
                 <div class="card-image">
                   <img class="card-image-img" src="{{recipe.photo_url}}">
@@ -10,7 +12,8 @@
                 </div>
                 
                 <div class="card-content">
-                  <span class="card-title">{{recipe.recipe_name}}</span>
+                  <a href="{{url_for('recipe_single', recipe_id=recipe._id)}}"><span class="card-title">{{recipe.recipe_name}}</span></a>
+                  
                   <p class="descript">{{recipe.description}}</p>
                 </div>
                 
@@ -22,6 +25,7 @@
               </div>
             </div>
     {% endfor %}
+</div>
 </div>
     
 {% endblock %}

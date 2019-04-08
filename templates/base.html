@@ -10,16 +10,46 @@
     </head>
     
     <body>
-        <h1>Outside!</h1>
+        
+      <header>
+          
+          <nav>
+              
+              <div class="nav-wrapper">
+                  <a href="{{url_for('get_recipes')}}" class="brand-logo"<img src="{{url_for('static', filename='EasyFood.png')}}"></img></a>
+                  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                  <ul class="right hide-on-med-and-down">
+                      <li><a href="{{url_for('get_recipes')}}">Home</a></li>
+                      <li><a href="{{url_for('add_recipe')}}">New recipe</a></li>
+                      <li><a href="{{url_for('categories')}}">Manage Categories</a></li>
+                  </ul>
+              </div>
+          
+          
+          <ul class="sidenav" id="mobile-demo">
+              <li><a href="{{url_for('get_recipes')}}">Home</a></li>
+              <li><a href="{{url_for('add_recipe')}}">New recipe</a></li>
+              <li><a href="{{url_for('categories')}}">Manage Categories</a></li>
+          </ul>
+          </nav>
+      </header>  
+        
         {% block content %}
         {% endblock %}
         
    <!--JavaScript components-->   
-       <!--Category selector: Add_recipe page-->  
+       
         <script>
+          // Category selector: Add_recipe page 
                 document.addEventListener('DOMContentLoaded', function() {
                     var elems = document.querySelectorAll('select');
                     var instances = M.FormSelect.init(elems);
+                });
+                
+          // Navbar: Base page.      
+                document.addEventListener('DOMContentLoaded', function() {
+                var elems = document.querySelectorAll('.sidenav');
+                var instances = M.Sidenav.init(elems);
                 });
         </script> 
          

@@ -87,6 +87,12 @@ def insert_category():
 @app.route('/add_category')
 def add_category():
     return render_template('addcategory.html')
+    
+    
+@app.route('/recipe_single/<recipe_id>')
+def recipe_single(recipe_id):
+    return render_template("recipepage.html",
+                           recipes=mongo.db.recipes.find({'_id': ObjectId(recipe_id)}))
 
 
 if __name__ == '__main__':
