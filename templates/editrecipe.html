@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {% block content %}
-    <h3>Edit Recipe</h3>
     
+<div class="container">
+  <h3>Edit Recipe</h3>
   <div class="row">
     <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">
         
@@ -58,9 +59,13 @@
             <button class="btn waves-effect deep-orange lighten-2" type="submit" name="action">Edit Recipe
                 <i class="material-icons right">local_dining</i>
              </button>
+             
+             <a href="{{ url_for('get_recipes') }}" class="waves-effect waves-light btn grey">
+             <i class="material-icons right">cancel</i>Cancel</a>
         </div>
         
       </div>
     </form>
   </div>
+ </div>
 {% endblock %}

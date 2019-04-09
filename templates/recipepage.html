@@ -1,4 +1,24 @@
-{% extends 'base.html' %}
-<h1>Recipe page</h1>
-    
+{% extends 'base.html' %} 
+{% block recipe_single %}
+
+<div class="container">
+    <div class="row ">
+        <div class="col s12 m12 l7 offset-l2 margin-bottom-5vh">
+            {% for recipe in recipes %}
+            <div class="col l12">
+                <div class="card hoverable">
+                    <div class="card-content">
+                        <h4><span class="card-title"><strong class="strong-text"><a href="{{url_for('recipe_single', recipe_id=recipe._id)}}"
+                                        class="recipe-title-text">{{recipe.recipe_name}}</a></strong></span></h4>                        
+                        <li class="divider"></li>
+                        <br>
+                        <p>{{recipe.description}}</p><br>                        
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
 {% endblock %}

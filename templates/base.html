@@ -10,32 +10,48 @@
     </head>
     
     <body>
-        
+    <!--NavBar-->      
       <header>
-          
           <nav>
-              
               <div class="nav-wrapper">
-                  <a href="{{url_for('get_recipes')}}" class="brand-logo"<img src="{{url_for('static', filename='EasyFood.png')}}"></img></a>
+                  <a href="{{url_for('get_recipes')}}" class="brand-logo"</a>
+                  <a href="{{url_for('get_recipes')}}" class="brand-logo"<img src="{{ url_for('static', filename='EasyFood.png') }}"></img></a>
                   <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                   <ul class="right hide-on-med-and-down">
                       <li><a href="{{url_for('get_recipes')}}">Home</a></li>
-                      <li><a href="{{url_for('add_recipe')}}">New recipe</a></li>
-                      <li><a href="{{url_for('categories')}}">Manage Categories</a></li>
+                      <li><a href="{{url_for('categories')}}">Manage Cusines</a></li>
+                      <li><a href="{{url_for('add_recipe')}}" class="button-nav btn">New recipe</a></li>
                   </ul>
               </div>
           
-          
-          <ul class="sidenav" id="mobile-demo">
-              <li><a href="{{url_for('get_recipes')}}">Home</a></li>
-              <li><a href="{{url_for('add_recipe')}}">New recipe</a></li>
-              <li><a href="{{url_for('categories')}}">Manage Categories</a></li>
-          </ul>
+              <ul class="sidenav" id="mobile-demo">
+                  <li><a href="{{url_for('get_recipes')}}">Home</a></li>
+                  <li><a href="{{url_for('add_recipe')}}">New recipe</a></li>
+                  <li><a href="{{url_for('categories')}}">Manage Categories</a></li>
+              </ul>
           </nav>
       </header>  
-        
+      
+   <!--Main banner-->  
+      <section class="banner"></section>
+    
+   <!--Flask Block content-->    
         {% block content %}
         {% endblock %}
+        
+    <!--Footer-->  
+      <footer>
+         <div class="container">
+             <div class="row">
+                 <div class="col s12">
+                     <img src=""></img>
+                     <p> Easy Food is your go-to source for all things food. It is the ultimate cooking and kitchen recepis log-book to custom-built your favourite dishes collection.</p>
+                 </div>
+             </div>
+         </div>
+      </footer>
+      
+     
         
    <!--JavaScript components-->   
        

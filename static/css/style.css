@@ -1,25 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
 /********** NavBar css *******/
 
 .nav-wrapper {
     background-color: #f5f8fa;
     color: #32475b;
-    border-bottom: 1px solid #32475b;
+
 }
 
-.nav-wrapper > li {
+.nav-wrapper > ul > li > a {
     color: #32475b;
 }
 
+.button-nav {
+    background-color: #ff7b59;
+    color: white;
+    text-align: center;
+}
+
+.brand-logo {
+    background-image: url("/static/EasyFood.png");
+}
+
+
+/********** Banner css *******/
+
+.banner {
+    width: 100%;
+    height: 9em;
+    background-image: url("/static/banner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(30%);
+    background-color: #cccccc;
+}
+
+
 /********** Cards css *******/
 
+.card-image {
+   position: relative;  
+}
+
+#category {
+    width: 6em;
+    height: 2em;
+    background-color: #ffebee;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    padding: 0.4em, 0.4em, 0, 0.4em;
+    text-align: center;
+    border-radius: 1px;
+}
+
+#category > a {
+    padding-top: 0.3em;
+    text-align: center;
+    color: #ff7b59;
+    font-size: small;
+    vertical-align: middle;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+
 .links-botton-card > a {
-    color: #c5c5c5;
+    color: #32475b;
     font-size: small;
 }
 
 .recipes-list {
-    margin-top: 20%;
+    padding-top: 4%;
 
+}
+
+.card-title {
+    color: #32475b;
+    font-weight: 500;
 }
 
 #cruisine-tag > p {
@@ -30,6 +88,41 @@
     width: 100%;
     height: 14vw;
     object-fit: cover;
+}
+
+.btn-icon {
+    background-color: #ff7b59;   
+}
+
+a.delete-item-link {
+    float: right;
+}
+
+.delete-item-link:hover {
+    color: #ff7b59;;
+}
+
+.edit-item-link:hover {
+    color: #ff7b59;;
+}
+
+.descript {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 0.5em;
+    padding-bottom: 0.2em;
+    font-size: small;
+    color: #4cc1bb;
+    vertical-align: middle;
+}
+
+.icon-cook {
+    color: #4cc1bb;
+    font-size: medium;
+}
+
+.icon-cook-div {
+    vertical-align: super;
 }
 
 /* Forms Colors */
@@ -61,3 +154,64 @@
    .input-field .prefix.active {
      color: #000;
    }
+   
+ 
+ 
+/********** Container css *******/ 
+
+.btn {
+    background-color: #ff7b59;
+    color: white;
+} 
+
+.btn_cat {
+    height: 20px;
+    width: 40px;
+    line-height: 24px;
+    margin: 3px 3px;
+    font-size: smaller;
+    float: right;
+    border-color: #ff7b59;
+    border-bottom-style: solid;
+    border-width: 1px;
+}
+
+/********** Categories page css *******/ 
+
+.collection-item:hover {
+    background-color: #f5f8fa;
+}
+
+strong {
+    font-size: larger;
+    color: #32475b;
+}
+
+ /********** Footer css *******/  
+
+footer {
+    background-color: #f5f8fa;
+    text-align: center;
+    color: #32475b;
+    height: 100px;
+}
+
+ /********** Container css *******/  
+   
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 90%;
+}
+@media only screen and (min-width: 601px) {
+  .container {
+    width: 85%;
+  }
+}
+@media only screen and (min-width: 993px) {
+  .container {
+    width: 70%;
+  }
+}
+
+

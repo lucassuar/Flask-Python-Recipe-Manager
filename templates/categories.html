@@ -2,26 +2,30 @@
 
 <div class="container">
   <div class="row">
-    
+    <h3>Cuisines</h3><p>In this section you can modified the cuisines types that will help you categorize your recipes.</p>
      <ul class="collection with-header">
-        <li class="collection-header"><h4>Categories</h4></li>
+        
         
      {% for category in categories %}
-        <li class="collection-item"><div>{{category.category_name}}
-        <a class="edit-item-link" href="{{url_for('edit_category', category_id=category._id)}}">Edit</a> <a class="delete-item-link" href="{{url_for('delete_category', category_id=category._id)}}">Delete</a>
-        <i class="material-icons">send</i></div>
-        
+        <li class="collection-item">
+            <div><strong>{{category.category_name}}</strong>
+                <a class="edit-item-link btn-cat" href="{{url_for('edit_category', category_id=category._id)}}">Edit</a> 
+                <a class="delete-item-link btn-cat" href="{{url_for('delete_category', category_id=category._id)}}">Delete</a>
+             </div>
         </li>
      
      {% endfor %}
       </ul>
    </div>
-</div>
-
-<div class="row">
+   
+   <div class="row">
     <a href="{{url_for('add_category')}}" class="waves-effect waves-light btn">
         <i class="material-icons right">playlist_add</i>Add Category
     </a>
 </div>
+
+</div>
+
+
 
 {% endblock %}
