@@ -42,6 +42,7 @@ def update_recipe(recipe_id):
     {
         'recipe_name':request.form.get('recipe_name'),
         'category_name':request.form.get('category_name'),
+        'recipe_intro':request.form.get('recipe_intro'),
         'ingredients': request.form.get('ingredients'),
         'description': request.form.get('description'),
         'preparation_time': request.form.get('preparation_time'),
@@ -94,6 +95,7 @@ def add_category():
 def recipe_single(recipe_id):
     return render_template("recipepage.html",
                            recipes=mongo.db.recipes.find({'_id': ObjectId(recipe_id)}))
+                           
 
 
 if __name__ == '__main__':

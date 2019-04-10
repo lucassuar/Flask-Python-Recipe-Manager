@@ -2,10 +2,11 @@
 
 /********** NavBar css *******/
 
+
 .nav-wrapper {
     background-color: #f5f8fa;
     color: #32475b;
-
+    position: fixed;
 }
 
 .nav-wrapper > ul > li > a {
@@ -22,6 +23,9 @@
     background-image: url("/static/EasyFood.png");
 }
 
+.menu-nav-icon {
+    color: #ff7b59;
+}
 
 /********** Banner css *******/
 
@@ -31,8 +35,9 @@
     background-image: url("/static/banner.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    filter: grayscale(30%);
+    filter: opacity(60%);
     background-color: #cccccc;
+    position: relative;
 }
 
 
@@ -90,6 +95,30 @@
     object-fit: cover;
 }
 
+.card-image-img {
+    width: 100%;
+    height: 19vw;
+    object-fit: cover;
+}
+
+
+.card-title-recipep {
+    font-size: 3em;
+    font-weight: 600;
+    color: #32475b;
+    padding-bottom: 0.4em;
+}
+
+.card-title-recipep:hover {
+    color: #ff7b59;
+}
+
+.ingredients-box {
+    background-color: #f5f8fa;
+    margin: 1.2em, 1.2em, 1.2em, 1.2em;
+    border-radius: 2px;
+}
+
 .btn-icon {
     background-color: #ff7b59;   
 }
@@ -123,6 +152,14 @@ a.delete-item-link {
 
 .icon-cook-div {
     vertical-align: super;
+}
+
+/* Single recipe page */
+
+.card-single-recipe {
+    position: absolute;
+    top: 130px;
+    max-width: 52em;
 }
 
 /* Forms Colors */
@@ -162,6 +199,8 @@ a.delete-item-link {
 .btn {
     background-color: #ff7b59;
     color: white;
+    font-size: 14px;
+    text-transform: capitalize;
 } 
 
 .btn_cat {

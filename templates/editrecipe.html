@@ -32,6 +32,12 @@
         </div>
         
         <div class="input-field col s12">
+          <i class="material-icons prefix">comment</i>
+          <input id="recipe_intro" name="recipe_intro" type="text" class="validate" value="{{recipe.recipe_intro}}">
+          <label for="icon_prefix"> Recipe intro-text </label>
+        </div>
+        
+        <div class="input-field col s12">
           <i class="material-icons prefix">list</i>
           <input id="ingredients" name="ingredients" type="text" class="validate" value="{{recipe.ingredients}}">
           <label for="icon_prefix"> Ingredients </label>
@@ -56,7 +62,7 @@
         </div>
         
         <div class="row">
-            <button class="btn waves-effect deep-orange lighten-2" type="submit" name="action">Edit Recipe
+            <button class="btn waves-effect deep-orange lighten-2" type="submit" name="action">Save Recipe
                 <i class="material-icons right">local_dining</i>
              </button>
              

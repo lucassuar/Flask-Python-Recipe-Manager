@@ -2,20 +2,33 @@
 {% block content %}
 
 <div class="container">
+<div class="input-field col s12">
+    <select>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">All</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </select>
+    <label>Select Your Favourite Cuisine</label>
+  </div>
+</div>
+
+
+<div class="container">
 <div class="row recipes-list">
     {% for recipe in recipes %}
-            <div class="col s12 m6 l4 offset-s2">
-              <div class="card">
+            <div class="col s12 m6 l4">
+              <div class="card hoverable">
                 <div class="card-image">
                   <img class="card-image-img" src="{{recipe.photo_url}}">
-                  <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons btn-icon">import_contacts</i></a>
+                  <a class="btn-floating halfway-fab waves-effect waves-light red" href="{{url_for('recipe_single', recipe_id=recipe._id)}}"><i class="material-icons btn-icon">import_contacts</i></a>
                   <div id="category"><a>{{recipe.category_name}}</a></div>
                 </div>
                 
                 <div class="card-content">
                   <a href="{{url_for('recipe_single', recipe_id=recipe._id)}}"><span class="card-title">{{recipe.recipe_name}}</span></a>
                   <div class="icon-cook-div"><i class="icon-cook material-icons prefix">timer</i><p class="descript">{{recipe.preparation_time}}</p></div>
-                  <p class="cook-time">{{recipe.description}}</p>
+
                 </div>
                 
                 <div class="card-content red lighten-5 links-botton-card">
