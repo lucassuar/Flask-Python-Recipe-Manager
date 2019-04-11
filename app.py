@@ -1,4 +1,5 @@
-import os
+import os 
+import re
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId 
@@ -10,11 +11,41 @@ app.config["MONGO_URI"] = 'mongodb+srv://root:r00tUser@my-first-cluster-hgde0.mo
 mongo = PyMongo(app)
 
 
+# -----Homepage------
+
 @app.route('/')
 @app.route('/get_recipes')
 def get_recipes():
-    return render_template("recipes.html", recipes=mongo.db.recipes.find())
+    if request.args.get('recipe_name') is not None: 
+        recipenameregex = "\W*"+request.args.get("recipe_name")+"\W*"
+        recipename = re.compile(recipenameregex, re.IGNORECASE)
+        recipes=mongo.db.recipes.find({"recipe_name": recipename})
+        return render_template("recipes.html", recipes=recipes)
+        
+    if request.args.get('preparation_time') is not None: 
+        preparationtimeregex = "\W*"+request.args.get("preparation_time")+"\W*"
+        preparationtime = re.compile(preparationtimeregex, re.IGNORECASE)
+        recipes=mongo.db.recipes.find({"preparation_time": preparationtime})
+        return render_template("recipes.html", recipes=recipes)
 
+    return render_template("recipes.html", recipes=mongo.db.recipes.find())
+    return render_template('search.html', categories=mongo.db.categories.find())
+    
+    
+
+# -----Charts------
+@app.route('/charts')
+def charts():
+    return render_template("charts.html")
+    
+@app.route('/data')
+def data():
+    categories = mongo.db.categories
+    results = categories.find()
+    
+    return jsonify({'results' : result['values']})
+    
+# ---End Charts----
     
 @app.route('/add_recipe')
 def add_recipe():

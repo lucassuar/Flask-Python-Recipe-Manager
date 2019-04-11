@@ -3,19 +3,30 @@
 
 <div class="container">
 <div class="input-field col s12">
-    <select>
-      <option value="" disabled selected>Choose your option</option>
-      <option value="1">All</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
-    </select>
-    <label>Select Your Favourite Cuisine</label>
+    <form action="/get_recipes">
+         <div>
+            First name:<br>
+            <input type="text" name="recipe_name" value="">
+         </div> 
+      
+          <div>
+            Cuisines:<br>
+            <select>
+                <option value="" disabled selected>Choose your option</option>
+                {% for category in categories %}
+                  <option name="category" value="">{{category.category_name}}</option>
+                {% endfor %}
+              </select>
+          </div>
+          
+          <input class="btn" type="submit" value="Submit">
+    </form>
   </div>
 </div>
 
 
 <div class="container">
-<div class="row recipes-list">
+ <div class="row recipes-list">
     {% for recipe in recipes %}
             <div class="col s12 m6 l4">
               <div class="card hoverable">

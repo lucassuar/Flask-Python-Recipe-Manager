@@ -7,6 +7,7 @@
           <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css"  media="screen,projection"/>
     <!--custom css-->
           <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" type="text/css" />
     </head>
     
     <body>
@@ -15,7 +16,7 @@
           <nav>
               <div class="nav-wrapper">
                   <a href="{{url_for('get_recipes')}}" class="brand-logo"</a>
-                  <a href="{{url_for('get_recipes')}}" class="brand-logo"<img src="{{ url_for('static', filename='EasyFood.png') }}"></img></a>
+                  <a href="{{url_for('get_recipes')}}" class="brand-logo"<img src="{{ url_for('static', filename='easyfood.png') }}"></img></a>
                   <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons menu-nav-icon">menu</i></a>
                   <ul class="right hide-on-med-and-down">
                       <li><a href="{{url_for('get_recipes')}}">Home</a></li>
@@ -38,11 +39,13 @@
    <!--Flask Block content-->    
         {% block content %}
         {% endblock %}
+        
       
-     
+   <!--ChartsJs-->  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
         
    <!--JavaScript components-->   
-       
         <script>
           // Category selector: Add_recipe page 
                 document.addEventListener('DOMContentLoaded', function() {
