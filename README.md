@@ -6,7 +6,15 @@ This application has mainly been built using technologies as Python and the Flas
 ## UX
 This platform hass been built to be fully responsive so it works perfectly on any device screen size.
 
-  - Initial Wireframes can be found [here](https://)
+Initial Wireframes can be found below:
+  
+ - [Image 1](https://recipes-manager-flask.herokuapp.com/static/ui_images/recipe_homepage-desktop.png)
+ - [Image 2](https://recipes-manager-flask.herokuapp.com/static/ui_images/add-edit-page-recipe-app.png)
+ - [Image 3](https://recipes-manager-flask.herokuapp.com/static/ui_images/add-edit-page-recipe-app.png)
+ - [Image 4](https://recipes-manager-flask.herokuapp.com/static/ui_images/recipe_recipe-page-mobile.png)
+ - [Image 5](https://recipes-manager-flask.herokuapp.com/static/ui_images/recipe_single-recipe-page-desktop.png)
+ - [Image 6](https://recipes-manager-flask.herokuapp.com/static/ui_images/recipe_single-recipe-page-mobile.png)
+
 
 ### User stories
 
