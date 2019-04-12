@@ -50,19 +50,23 @@ def data():
     
     return jsonify({'results' : result['values']})
     
-# ---End Charts----
-    
+
+# -----Add Recipe------
 @app.route('/add_recipe')
 def add_recipe():
     return render_template('addrecipe.html',
                            categories=mongo.db.categories.find())
+
 
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
     recipes = mongo.db.recipes
     recipes.insert_one(request.form.to_dict())
     return redirect(url_for('get_recipes'))
-    
+
+
+# -----Edit Recipe------
+
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
     the_recipe =  mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
@@ -87,10 +91,16 @@ def update_recipe(recipe_id):
     })
     return redirect(url_for('get_recipes'))
 
+
+# -----Delete Recipe------
+
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
+
+
+# -----Categories funcitionalities------
 
 @app.route('/categories')
 def categories():
@@ -121,18 +131,20 @@ def insert_category():
     mongo.db.categories.insert_one(category_doc)
     return redirect(url_for('categories'))
 
-
 @app.route('/add_category')
 def add_category():
     return render_template('addcategory.html')
+   
     
-    
+# -----Single Page Recipe------
+
 @app.route('/recipe_single/<recipe_id>')
 def recipe_single(recipe_id):
     return render_template("recipepage.html",
                            recipes=mongo.db.recipes.find({'_id': ObjectId(recipe_id)}))
                            
 
+# ************************************************
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
