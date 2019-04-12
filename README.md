@@ -6,7 +6,7 @@ This application has mainly been built using technologies as Python and the Flas
 ## UX
 This platform hass been built to be fully responsive so it works perfectly on any device screen size.
 
-- Initial Wireframes can be found [here](https://)
+  - Initial Wireframes can be found [here](https://)
 
 ### User stories
 
@@ -73,13 +73,25 @@ Below are some of the potential stories that users can follow:
 
 
 ## Testing and validation
-#### Testing
-- The platform has been tested on all modern desktop and mobile browsers to ensure cross compatibility and functionalities.
-- The platform has been tested to be fully responsive and that is correctly displayed across all of type devices.
-- The platform has been tested to ensure that all of the user stories were functional without errors.
-- The platform has been tested to cover the various Flask routes. 
-- On the add recipe form all necessary fields i.e. title, cuisine etc. - were given the `required` tag to ensure the user did not submit empty/partially filled recipes.
-- The platform has been tested to ensure all text-area and inputs are perfectly funcioning and sending/reciving corrct data.
+
+Some manual tests had been carried out to ensure the platfom funcionalities are on perfect working order.
+
+Test  | Status
+------------- | -------------
+Basic Tests |
+
+Clicking on logo icon in navigation takes user to homepage | Successful
+The platform has been tested on all modern desktop and mobile browsers to ensure cross compatibility and functionalities. | Successful
+The platform has been tested to be fully responsive and that is correctly displayed across all of type devices. | Successful
+The platform has been tested to ensure that all of the user stories were functional without errors. | Successful
+The platform has been tested to cover the various Flask routes. | Successful
+On the add recipe form all necessary fields i.e. title, cuisine etc. - were given the `required` tag to ensure the user did not submit empty/partially filled recipes. | Successful
+The platform has been tested to ensure all text-area and inputs are perfectly funcioning and sending/reciving corrct data. | Successful
+All buttons works perfectly (edit, delete, cancel, send) | Successful
+The user can come back to the previous window from everywhere, no rabbit holes. | Successful
+Categories functionlity works correctly. | Successful
+Search funcionalities for keywords works for first word, last word, combine words or partial words. | Successful
+MondoDB is getting updated from actions on the frontend of the platform. | Successful
 
 
 ## Features overview
