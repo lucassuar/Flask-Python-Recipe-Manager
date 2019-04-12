@@ -1,25 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="container">
-<div class="input-field col s12">
-    <form action="/get_recipes">
-         <div>
-            First name:<br>
+<div class="container search-form">
+  <div class="row input-field search-div">
+    <h6>Select one of the option to search for your favourite recipes</h6>
+    <form class="search-form-form" action="/get_recipes">
+         <div class="form-field-div col m6 l4">
+            <p>Keyword or time:</p>
             <input type="text" name="recipe_name" value="">
          </div> 
       
-          <div>
-            Cuisines:<br>
+          <div class="form-field-div col m6 l4">
+            <p>Cuisines:</p>
             <select>
-                <option value="" disabled selected>Choose your option</option>
+                <option class="disable" value="" disabled selected>Choose your option</option>
                 {% for category in categories %}
                   <option name="category" value="">{{category.category_name}}</option>
                 {% endfor %}
               </select>
           </div>
-          
-          <input class="btn" type="submit" value="Submit">
+          <div class="col m6 l4">
+             <input class="btn btn-search" type="submit" value="Submit">
+          </div>
     </form>
   </div>
 </div>

@@ -40,6 +40,44 @@
     position: relative;
 }
 
+/********** search form css *******/
+
+.search-form {
+    width: 100%;
+    height: 100%;
+    background-color: #f5f8fa;
+    border-radius: 2px;
+}
+
+.search-form-form {
+    padding: 1em 4em 0.5em 3em;
+}
+
+.search-div > h6 {
+    text-align: center;
+    color: #7689a0de;
+    padding: 1em 2.3em 0.1em 2.3em;
+}
+
+.form-field-div > p {
+    color: #7689a0de;
+    padding-bottom: -5px;
+}
+
+.form-field-div {
+    display: inline-block;
+}
+
+.btn-search {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 5px;
+}
+
+.disable {
+    color: #7689a0de;
+}
+
 
 /********** Cards css *******/
 
