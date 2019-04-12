@@ -19,8 +19,10 @@
     text-align: center;
 }
 
-.brand-logo {
-    background-image: url("/static/EasyFood.png");
+.brand-logo > img {
+    width: 5em;
+    padding-left: 1em;
+    vertical-align: middle;
 }
 
 .menu-nav-icon {
@@ -50,13 +52,13 @@
 }
 
 .search-form-form {
-    padding: 1em 4em 0.5em 3em;
+    padding: 1.4em 4em 0.5em 3em;
 }
 
 .search-div > h6 {
     text-align: center;
     color: #7689a0de;
-    padding: 1em 2.3em 0.1em 2.3em;
+    padding: 1.3em 2.3em 0.1em 2.3em;
 }
 
 .form-field-div > p {
@@ -64,18 +66,15 @@
     padding-bottom: -5px;
 }
 
-.form-field-div {
-    display: inline-block;
-}
 
 .btn-search {
     position: absolute;
     bottom: 0;
-    padding-bottom: 5px;
 }
 
 .disable {
     color: #7689a0de;
+    font-size: small;
 }
 
 

@@ -27,9 +27,14 @@ def get_recipes():
         preparationtime = re.compile(preparationtimeregex, re.IGNORECASE)
         recipes=mongo.db.recipes.find({"preparation_time": preparationtime})
         return render_template("recipes.html", recipes=recipes)
-
+    
+    if request.args.get('category_name') is not None: 
+        categoryregex = "\W*"+request.args.get("category")+"\W*"
+        category = re.compile(categoryregex, re.IGNORECASE)
+        recipes=mongo.db.categories.find({"category_name": category})
+        return render_template("recipes.html", recipes=recipes)
+    
     return render_template("recipes.html", recipes=mongo.db.recipes.find())
-    return render_template('search.html', categories=mongo.db.categories.find())
     
     
 

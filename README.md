@@ -1,10 +1,12 @@
-[![Build Status](https://)](https://)
+[![Build Status](https://recipes-manager-flask.herokuapp.com/)](https://recipes-manager-flask.herokuapp.com/)
 # Flask Cooking Recipes-Book
 This project/repositary contains the code for a platform/application to store Cooking recipes. Users will be able to add, modify, delete recipes, categorise them and do basic searches.
 This application has mainly been built using technologies as Python and the Flask framework.
 
 ## UX
 This platform hass been built to be fully responsive so it works perfectly on any device screen size.
+
+- Initial Wireframes can be found [here](https://)
 
 ### User stories
 
@@ -73,127 +75,89 @@ Below are some of the potential stories that users can follow:
 ## Testing and validation
 #### Testing
 - The platform has been tested on all modern desktop and mobile browsers to ensure cross compatibility and functionalities.
-- The site was tested to be responsive and to ensure it would be correctly displayed across mobile devices.
-- I ensured that each one of the user stories were thoroughly tested to be functional without errors.
-- Testing for this project was implemented manually. The majority of testing covered the various Flask routes. Some examples of issues/tests on routes:
-- When on the homepage, when clicking on a recipe category and no recipes for such a category exist then the user will be directed to the all recipes route.
-- When using the search bar, if nothing is input into the search field then the user will shown al recipes.
-- When sorting recipes by parameters i.e. newest/oldest, votes desc/asc etc. - if such a parameter is not recorded in any given document, it is omitted from the sorted list which is returned.
+- The platform has been tested to be fully responsive and that is correctly displayed across all of type devices.
+- The platform has been tested to ensure that all of the user stories were functional without errors.
+- The platform has been tested to cover the various Flask routes. 
 - On the add recipe form all necessary fields i.e. title, cuisine etc. - were given the `required` tag to ensure the user did not submit empty/partially filled recipes.
-- For text-area and inputs, a `max-length` was added to restrict input length.
+- The platform has been tested to ensure all text-area and inputs are perfectly funcioning and sending/reciving corrct data.
 
-#### Python linting
-- All code was linted and formatted to the [Pep8](https://www.python.org/dev/peps/pep-0008/) standard.
 
 ## Features overview
+- See all recipes overview (cards)
+- Search recipes by keyword, time and cuisine.
 - Add a recipe.
 - Edit recipes.
-- Search for recipes.
+- Remove a recipe.
 - Add cuisines.
 - Edit cuisines.
+- Delete cuisines.
 
 ### Features I'd like to implement in future versions
-- User authentication system
+- User a registation/authentication system.
+- More advance analytcs section.
 - Sharable recipes.
 - Export to PDF.
-- Implement search caching/indexing.
+
 
 ## Challenges
-- Learning how to integrate Flask and MongoDB was a great learning experience. I learned much from how to manage and interact with a NoSQL data store.
-
-- Managing routes and URL's with Flask was also very interesting and I learned a great deal from reading the documentation around Flask and MongoDB.
+- Flask and MongoDB integration was a great learning experience but tricky at times. 
+- Creating the logic and routes on python has been the biggest challenge for me.
 
 
 ## Technologies Used
+
 - [HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML)
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
-- [JavaScript](https://developer.mozilla.org/bm/docs/Web/JavaScript)
-- [jQuery](https://jquery.com/) - for DOM manipulation.
-- [Bootstrap](https://getbpptstrap.com) - Bootstrap is used as the primary CSS framework.
-- [Flask](http://flask.pocoo.org/) - MVT (Mode-View-Template) framework used to build the application. 
+- [MaterilizeCss](https://materializecss.com) - Materilize has been used as the primary HTML/CSS framework.
+- [JavaScript](https://developer.mozilla.org/bm/docs/Web/JavaScript) - to activate Materilize elements and for DOM manipulation.
+- [Flask](http://flask.pocoo.org/) - Python framework used to build the platform. 
 - [MongoDB](https://www.mongodb.com/) - Relational database store for model data.
-- [Heroku](https://www.heroku.com/) - Platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
-- [Travis-CI](https://travis-ci.com) - Test and deploy code projects.
-- [mLab](https://mlab.com/) - Database-as-a-Service for MongoDB.
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) - Interface to manage MongoDB manually.
+- [Heroku](https://www.heroku.com/) - Platform used to import the entirely platfom into the cloud.
 
 
 ## Production Deployment
-I have written an article on the rest of the process which is available [here](https://dev.to/davedodea/how-to-deploy-a-python-app-toheroku-5djn).
 
-- A live version of this app is available [here](https://glacial-brook-98593.herokuapp.com/).
-
-- The Flask application is deployed to a Heroku instance.
-
-- The MongoDB is deployed to an mLab instance.
-
-- Testing is triggered via TravisCI upon PR's to the GitHub repository.
-
-- Once TravisCI builds successfully, deployment is carried out on Heroku.
+See a live version of this platform [here](https://recipes-manager-flask.herokuapp.com/).
 
 ##### The process I took was as follows:
-- Set up a new instance of a Heroku app, along with a mLab instance.
-- Store the necessary config variables in the Heroku app settings.
-- Set the necessary  variables in the Flask app settings.
-- Set up Travis-CI to trigger when pushes are made to the repository, set up with a yml config file.
-- Set up a automatic deployment hook on Heroku to trigger once Travis-CI has completed.
-- Deploy by pushing to GitHub
 
-- If you wish to deploy - ensure you have set the following config vars set in Heroku app settings:
-```
-    - 'IP'
-    - 'MONGO_URI'
-    - 'PORT'
-```
-
-## Install/deploy locally
-### Ensure to comment out the `#For Heroku deployment` section of `app.py` when deploying locally.
-### Uncomment the `#For local deployment` section
-
-This is the process I have tested to enable local development and deployment.
-- Clone the repository.
-
-- CD into the repository.
-
-- Activate a virtual environment using `pipenv shell`.
-
-- ### **Important** Ensure you have set the environment variables in `env.py`: 
-    ```python
-    import os
-
-    # assessor DB user details
-    os.environ['MONGO_URI'] = 'mongodb://codeinst:codeinstitute2019@ds125402.mlab.com:25402/testmenudb'
-    os.environ['MONGO_DBNAME'] = 'testmenudb'
-    ```
-- Install requirements: `pipenv install`
-
-- Run the server: `python3 app.py`
-
+- Create Heroku repositery.
+- Login to Heroku: heroku login
+- Open your project, create a local git repository: git init
+- Add Heroku as remote: git remote add origin https://recipes-manager-flask.herokuapp.com/
+- Add changes: git add .
+- Commit changes: $ git commit -am "make it better"
+- Push changes: git push heroku master
 
 
 ## Databse schema:
+
+There two types of collection within MongoDB. one is the actual recipes and then the cuisines types called categories. See below an example of how they are both structured:
+
 - The main MongoDB collection `recipes` takes he following schema.
 
 ```json
 {
     "_id": {
-        "$oid": "5c78652fe64d1e68d7eba7a6"
+        "$oid": "5ca5f9c11c9d440000fcef84"
     },
-    "title": "Chocolate cake",
-    "description": "Dark chocolate sponge cake",
-    "method": "Mix all ingredients. Bake for 35 mins at 180C",
-    "ingredients": [
-        "Chocolate",
-      "6 Eggs",
-      "125ml millke",
-      "200g Flour"
-    ],
-    "meal": "dessert",
-    "serves": "4",
-    "cooking-time": "30",
-    "prep-time": "10",
-    "cuisine": "French",
-    "user": "Dave",
-    "last_modified": "Thu Feb 28 22:48:15 2019"
+    "recipe_name": "Pizza Margarita",
+    "category_name": "Italian",
+    "recipe_intro": "This is a classic pizza",
+    "description": "Mix all ingredients. Bake for 35 mins at 180C",
+    "ingredients": "Cheese, flower, eggs, tomato sauce, oil, ham",
+    "prep-time": "19 min",
+  }
+```
+- The second MongoDB collection `categories` takes he following schema.
+
+```json
+{
+    "_id": {
+        "$oid": "5ca5f9c11c9d440000fcef54"
+    },
+    "category_name": "Italian",
   }
 ```
 
@@ -201,13 +165,9 @@ This is the process I have tested to enable local development and deployment.
 - PyMongo docs: https://api.mongodb.com/python/current/tutorial.html
 - Flask docs: http://flask.pocoo.org/docs/1.0/
 
-## Credits
+### Acknowledgements
 
-### Third-party
-- [Materialize CSS](https://materializecss.com/) CSS framework implementing Material design guidelines
+-
 
-- [Font awesome](fontawesome.com/v4.7.0/icons/) for app icon set.
-
-- [Hover CSS](http://ianlunn.github.io/Hover/) for CSS on hover animations.
-
-- [Unsplash](https://unsplash.com) for images.
+#### Licence
+Copyright (c) 2019 Lucas Suarez

@@ -3,25 +3,34 @@
 
 <div class="container search-form">
   <div class="row input-field search-div">
-    <h6>Select one of the option to search for your favourite recipes</h6>
+    <h6>Select one of the options to search for your favourite recipes</h6>
     <form class="search-form-form" action="/get_recipes">
-         <div class="form-field-div col m6 l4">
-            <p>Keyword or time:</p>
-            <input type="text" name="recipe_name" value="">
-         </div> 
-      
-          <div class="form-field-div col m6 l4">
-            <p>Cuisines:</p>
-            <select>
-                <option class="disable" value="" disabled selected>Choose your option</option>
-                {% for category in categories %}
-                  <option name="category" value="">{{category.category_name}}</option>
-                {% endfor %}
-              </select>
-          </div>
-          <div class="col m6 l4">
-             <input class="btn btn-search" type="submit" value="Submit">
-          </div>
+        <div class="row">
+             <div class="form-field-div col s6 m4">
+                <p>Keyword search:</p>
+                <input type="text" name="recipe_name" value="">
+             </div> 
+             
+             <div class="form-field-div col s6 m4">
+                <p>Prep. time search:</p>
+                <input type="text" name="preparation_time" value="">
+             </div>
+          
+              <div class="form-field-div col s12 m4">
+                <p>Cuisines:</p>
+                <select>
+                    <option class="disable" value="Choose your option" disabled selected >Choose your option</option>
+                    {% for category in categories %}
+                      <option name="category_name" value="">{{category.category_name}}</option>
+                    {% endfor %}
+                  </select>
+              </div>
+        </div>
+        <div class="row">
+              <div class="col s6 l4">
+                 <input class="btn btn-search" type="submit" value="Submit">
+              </div>
+        </div>
     </form>
   </div>
 </div>
