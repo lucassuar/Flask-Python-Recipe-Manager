@@ -6,7 +6,6 @@
 .nav-wrapper {
     background-color: #f5f8fa;
     color: #32475b;
-    position: fixed;
 }
 
 .nav-wrapper > ul > li > a {
@@ -20,7 +19,7 @@
 }
 
 .brand-logo > img {
-    width: 5em;
+    width: 20%;
     padding-left: 1em;
     vertical-align: middle;
 }
@@ -153,7 +152,6 @@
 
 .ingredients-box {
     background-color: #f5f8fa;
-    margin: 1.2em, 1.2em, 1.2em, 1.2em;
     border-radius: 2px;
 }
 
@@ -197,39 +195,7 @@ a.delete-item-link {
 .card-single-recipe {
     position: absolute;
     top: 130px;
-    max-width: 52em;
 }
-
-/* Forms Colors */
-
- /* label color */
-   .input-field label {
-     color: #000;
-   }
-   /* label focus color */
-   .input-field input[type=text]:focus + label {
-     color: #000;
-   }
-   /* label underline focus color */
-   .input-field input[type=text]:focus {
-     border-bottom: 1px solid #000;
-     box-shadow: 0 1px 0 0 #000;
-   }
-   /* valid color */
-   .input-field input[type=text].valid {
-     border-bottom: 1px solid #000;
-     box-shadow: 0 1px 0 0 #000;
-   }
-   /* invalid color */
-   .input-field input[type=text].invalid {
-     border-bottom: 1px solid #000;
-     box-shadow: 0 1px 0 0 #000;
-   }
-   /* icon prefix focus color */
-   .input-field .prefix.active {
-     color: #000;
-   }
-   
  
  
 /********** Container css *******/ 
@@ -264,17 +230,9 @@ strong {
     color: #32475b;
 }
 
- /********** Footer css *******/  
-
-footer {
-    background-color: #f5f8fa;
-    text-align: center;
-    color: #32475b;
-    height: 100px;
-}
 
  /********** Container css *******/  
-   
+/*   
 .container {
   margin: 0 auto;
   max-width: 1280px;
@@ -291,4 +249,4 @@ footer {
   }
 }
 
-
+*/

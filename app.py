@@ -3,6 +3,7 @@ import re
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId 
+from flask import jsonify
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'recipes_manager'
@@ -29,12 +30,12 @@ def get_recipes():
         return render_template("recipes.html", recipes=recipes)
     
     if request.args.get('category_name') is not None: 
-        categoryregex = "\W*"+request.args.get("category")+"\W*"
-        category = re.compile(categoryregex, re.IGNORECASE)
-        recipes=mongo.db.categories.find({"category_name": category})
-        return render_template("recipes.html", recipes=recipes)
+        categoryregex = "\W*"+request.args.get("category_name")+"\W*"
+        categoryname = re.compile(categoryregex, re.IGNORECASE)
+        categories=mongo.db.categories.find({"category_name": categoryname})
+        return render_template("recipes.html", categories=categories)
     
-    return render_template("recipes.html", recipes=mongo.db.recipes.find())
+    return render_template("recipes.html", recipes=mongo.db.recipes.find(), categories=mongo.db.categories.find())
     
     
 
@@ -43,12 +44,12 @@ def get_recipes():
 def charts():
     return render_template("charts.html")
     
-@app.route('/data')
+@app.route('/charts')
 def data():
     categories = mongo.db.categories
     results = categories.find()
     
-    return jsonify({'results' : result['values']})
+    return jsonify({'results' : results['values']})
     
 
 # -----Add Recipe------

@@ -50,7 +50,6 @@ Below are some of the potential stories that users can follow:
     - Be able to find by preparation time.
     - Be able to find by cuisine type.
 
-
 - A a user who wants to view the full recipe listing, I should:
     - click on a recipe card from the all recipes page and be taken to a page where I should:
         - see a page detailing all recipe fields:

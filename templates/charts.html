@@ -1,6 +1,18 @@
 {% extends 'base.html' %} {% block content %}
-    
-<canvas id="myChart" width="400" height="400"></canvas>
+
+<!--ChartsJs script-->  
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+<!--Chart HTML structure-->         
+<div class="container"> 
+  <div class="row">
+    <div class="col s12 m6 l4">
+        <canvas id="myChart" width="300" height="300"></canvas>
+    </div>
+  </div>
+</div> 
+
+<!--ChartsJs Graphs Script--> 
 <script>
 var ctx = document.getElementById('myChart');
 var myChart = new Chart(ctx, {
