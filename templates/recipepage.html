@@ -2,7 +2,7 @@
 
 
     <div class="row">
-        <div class="col s12 m12 l8 offset-m1 offset-l2 margin-bottom-4vh">
+        <div class="col s12 m12 l8 offset-l2 margin-bottom-4vh">
             <div class="card card-single-recipe">
             {% for recipe in recipes %}
                     <div class="card-content">
@@ -14,17 +14,17 @@
                         <p>{{recipe.recipe_intro}}</p><br>                        
                     </div>
                     
-                    <div class="card-image">
-                       <img class="card-image-img2" src="{{recipe.photo_url}}"></img>
+                    <div class="card-image responsive-img">
+                       <img class="responsive-img" src="{{recipe.photo_url}}"></img>
                     </div>
                     
                     <div>
-                    <div class="card-content ingredients-box">
+                      <div class="card-content ingredients-box">
                            <strong>Ingredients: </strong>
                            <li class="divider"></li>
                            <br>
                            <p> {{recipe.ingredients}} </p> 
-                    </div> 
+                      </div> 
                     </div>
                     
                     <div class="card-content">
@@ -41,6 +41,7 @@
             {% endfor %}
         </div>
     </div>
+  </div>
 
 
 {% endblock %}
