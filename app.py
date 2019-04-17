@@ -17,24 +17,29 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_recipes')
 def get_recipes():
-    if request.args.get('recipe_name') is not None: 
-        recipenameregex = "\W*"+request.args.get("recipe_name")+"\W*"
-        recipename = re.compile(recipenameregex, re.IGNORECASE)
-        recipes=mongo.db.recipes.find({"recipe_name": recipename})
-        return render_template("recipes.html", recipes=recipes)
+    if (request.args.get('recipe_name') is not None 
+    or request.args.get('preparation_time') is not None 
+    or request.args.get('category_name') is not None):
+        recipename = None
+        preparationtime = None
+        categoryname = None
         
-    if request.args.get('preparation_time') is not None: 
-        preparationtimeregex = "\W*"+request.args.get("preparation_time")+"\W*"
-        preparationtime = re.compile(preparationtimeregex, re.IGNORECASE)
-        recipes=mongo.db.recipes.find({"preparation_time": preparationtime})
-        return render_template("recipes.html", recipes=recipes)
-    
-    if request.args.get('category_name') is not None: 
-        categoryregex = "\W*"+request.args.get("category_name")+"\W*"
-        categoryname = re.compile(categoryregex, re.IGNORECASE)
-        categories=mongo.db.categories.find({"category_name": categoryname})
-        return render_template("recipes.html", categories=categories)
-    
+        if request.args.get('recipe_name') is not None and request.args.get('recipe_name') is not '':
+            recipenameregex = "\W*"+request.args.get("recipe_name")+"\W*"
+            recipename = re.compile(recipenameregex, re.IGNORECASE)
+          
+        if request.args.get('preparation_time') is not None and request.args.get('preparation_time') is not '':
+            preparationtimeregex = "\W*"+request.args.get("preparation_time")+"\W*"
+            preparationtime = re.compile(preparationtimeregex, re.IGNORECASE)
+        
+        if request.args.get('category_name') is not None and request.args.get('category_name') is not '':
+            categoryregex = "\W*"+request.args.get("category_name")+"\W*"
+            categoryname = re.compile(categoryregex, re.IGNORECASE)
+            
+
+        recipes=mongo.db.recipes.find( { "$or": [{"recipe_name": recipename}, {"preparation_time": preparationtime}, {"category_name": categoryname}] } )
+        return render_template("recipes.html", recipes=recipes) 
+        
     return render_template("recipes.html", recipes=mongo.db.recipes.find(), categories=mongo.db.categories.find())
     
     
