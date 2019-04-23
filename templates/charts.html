@@ -15,6 +15,8 @@
 <!--ChartsJs Graphs Script--> 
 <script>
 var ctx = document.getElementById('myChart');
+var getdata = $.get('/data');
+console.log(getdata);
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {

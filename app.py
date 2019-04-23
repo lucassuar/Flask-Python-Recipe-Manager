@@ -38,7 +38,7 @@ def get_recipes():
             
 
         recipes=mongo.db.recipes.find( { "$or": [{"recipe_name": recipename}, {"preparation_time": preparationtime}, {"category_name": categoryname}] } )
-        return render_template("recipes.html", recipes=recipes) 
+        return render_template("recipes.html", recipes=recipes, categories=mongo.db.categories.find()) 
         
     return render_template("recipes.html", recipes=mongo.db.recipes.find(), categories=mongo.db.categories.find())
     
@@ -47,14 +47,25 @@ def get_recipes():
 # -----Charts------
 @app.route('/charts')
 def charts():
-    return render_template("charts.html")
-    
-@app.route('/charts')
-def data():
+    results = {"labels": [ ], "data": [ ]}
     categories = mongo.db.categories
-    results = categories.find()
+    recipes = mongo.db.recipes
+    all_categories = categories.find({})
+    for category in all_categories:
+        category_counts = recipes.find({"category_name": category["category_name"]}).count()
+        results["labels"].append(category["category_name"])
+        results["data"].append(category_counts)
     
-    return jsonify({'results' : results['values']})
+    return render_template("charts.html", results=results)
+    
+
+    
+#@app.route('/charts')
+#def data():
+#    categories = mongo.db.categories
+#    results = categories.find()
+#    print(results)
+#    return jsonify({'results' : results['values']})
     
 
 # -----Add Recipe------
