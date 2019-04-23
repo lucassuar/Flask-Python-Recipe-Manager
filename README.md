@@ -70,14 +70,13 @@ Below are some of the potential stories that users can follow:
      - Specific recipe page which will redirect to a edit page where users will be able to edit one or all fields and update the database.
      - The dashboard card in their dashboard to a edit page where users will be able to edit one or all fields and update the database.
 
-- Users who wants to see all types of cuisines (or categories), they should see a link to "cuisines" 
+- Users who wants to see all types of cuisines (or categories), they should see a link to "cuisines". 
 - where they will be able to see a list of all cuisines with the following:
-- 
     - cuisine name.
     - edit button.
     - delete button.
     - add button
-
+- Users who wants to see some data about their recipes, they can see the exact number by cuisine type. 
 
 ## Testing and validation
 
@@ -110,12 +109,15 @@ MondoDB is getting updated from actions on the frontend of the platform. | Succe
 - Add cuisines.
 - Edit cuisines.
 - Delete cuisines.
+- Anlitycs/Charts
 
 ### Features I'd like to implement in future versions
 - User a registation/authentication system.
 - More advance analytcs section.
 - Sharable recipes.
 - Export to PDF.
+- Better analytcs and charts with more data.
+- Confirmation alert for delete button.
 
 
 ## Challenges
@@ -186,7 +188,7 @@ There two types of collection within MongoDB. one is the actual recipes and then
 
 ### Acknowledgements
 
--
+- Logo by easyfood.ie
 
 #### Licence
 Copyright (c) 2019 Lucas Suarez
