@@ -4,11 +4,15 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
       
 <!--Chart HTML structure-->  
-<div class="container" id="my-data" category_names={{results.labels|join(',')}} category_counts={{results.data|join(',')}} > 
-{{results.labels|join(',')}} {{results.data}}
+
+<div class="container">
   <div class="row">
-    <div class="col s12 m6 l4">
-        <canvas id="myChart" width="300" height="300"></canvas>
+    <h3>Recipes Charts</h3><p>Below you can see your recipes data by cuisine.</p>
+     <div id="my-data" category_names={{results.labels|join(',')}} category_counts={{results.data|join(',')}} > 
+  </div>
+  <div class="row">
+    <div class="col s12">
+        <canvas id="myChart" width="600" height="280"></canvas>
     </div>
   </div>
 </div> 
@@ -25,7 +29,7 @@ var myChart = new Chart(ctx, {
     data: {
         labels: labels,
         datasets: [{
-            label: '# of Votes',
+            label: '# of Recepies by Cuisine',
             data: data,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
