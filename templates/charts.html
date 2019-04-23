@@ -2,9 +2,10 @@
 
 <!--ChartsJs script-->  
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
-
-<!--Chart HTML structure-->         
-<div class="container"> 
+      
+<!--Chart HTML structure-->  
+<div class="container" id="my-data" category_names={{results.labels|join(',')}} category_counts={{results.data|join(',')}} > 
+{{results.labels|join(',')}} {{results.data}}
   <div class="row">
     <div class="col s12 m6 l4">
         <canvas id="myChart" width="300" height="300"></canvas>
@@ -14,16 +15,18 @@
 
 <!--ChartsJs Graphs Script--> 
 <script>
+var labels = document.getElementById('my-data').getAttribute('category_names');
+labels = labels.replace("[","").replace("]","").split(",");
+var data = document.getElementById('my-data').getAttribute('category_counts');
+data = data.replace("[","").replace("]","").split(",");
 var ctx = document.getElementById('myChart');
-var getdata = $.get('/data');
-console.log(getdata);
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: labels,
         datasets: [{
             label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            data: data,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
