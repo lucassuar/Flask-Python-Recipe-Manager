@@ -15,7 +15,7 @@
     <body>
     <!--NavBar-->      
       <div class="navbar-fixed">
-          <nav>
+        <nav class="nav-extended">
               <div class="nav-wrapper">
                   <a href="{{url_for('get_recipes')}}" class="brand-logo"><img src="{{ url_for('static', filename='easyfood.png') }}"></img></a>
                   <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons menu-nav-icon">menu</i></a>
@@ -26,15 +26,16 @@
                       <li><a href="{{url_for('add_recipe')}}" class="button-nav btn">New recipe</a></li>
                   </ul>
               </div>
-          
+        </nav>
+       </div> 
               <ul class="sidenav" id="mobile-demo">
                   <li><a href="{{url_for('get_recipes')}}">Home</a></li>
                   <li><a href="{{url_for('add_recipe')}}">New recipe</a></li>
                   <li><a href="{{url_for('categories')}}">Manage Categories</a></li>
+                  <li><a href="{{url_for('charts')}}">Charts</a></li>
               </ul>
-          </nav>
-      </div>  
-      
+          
+     
    <!--Main banner-->  
       <section class="banner"></section>
     
