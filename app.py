@@ -58,16 +58,7 @@ def charts():
     
     return render_template("charts.html", results=results)
     
-
     
-#@app.route('/charts')
-#def data():
-#    categories = mongo.db.categories
-#    results = categories.find()
-#    print(results)
-#    return jsonify({'results' : results['values']})
-    
-
 # -----Add Recipe------
 @app.route('/add_recipe')
 def add_recipe():

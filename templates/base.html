@@ -10,12 +10,14 @@
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" type="text/css" />
     <!--Favicon --> 
            <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}" sizes="16x16 32x32" type="image/png">
+           
+           <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     
     <body>
     <!--NavBar-->      
       <div class="navbar-fixed">
-        <nav class="nav-extended">
+        <nav class="nav-extended name="viewport" content="width=device-width, initial-scale=1.0">
               <div class="nav-wrapper">
                   <a href="{{url_for('get_recipes')}}" class="brand-logo"><img src="{{ url_for('static', filename='easyfood.png') }}"></img></a>
                   <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons menu-nav-icon">menu</i></a>
