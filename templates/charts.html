@@ -10,10 +10,8 @@
     <h3>Recipes Charts</h3><p>Below you can see your recipes data by cuisine.</p>
      <div id="my-data" category_names={{results.labels|join(',')}} category_counts={{results.data|join(',')}} > 
   </div>
-  <div class="row">
-    <div class="col s12">
-        <canvas id="myChart" width="600" height="280"></canvas>
-    </div>
+  <div class="chart-container" style="position: relative; height:30vh; width:100%">
+    <canvas id="myChart" width="600" height="300"></canvas>
   </div>
 </div> 
 

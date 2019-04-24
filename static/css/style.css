@@ -184,9 +184,12 @@ a.delete-item-link {
     vertical-align: super;
 }
 
-/* Single recipe page */
+/* Chart page */
 
-
+#myChart {
+      width: 600;
+      height: 600;
+  }
 
  
 /********** Container css *******/ 
@@ -230,10 +233,28 @@ strong {
   max-width: 1280px;
   width: 90%;
 }
+
+
+@media only screen and (max-width: 500px) {
+  .btn_add_recipe {
+        margin-left:auto;
+        margin-right:auto;
+        text-align: center;
+        display: block;
+  }
+  
+  .chart-container {
+      height: 50vh;
+  }
+  
+}
+
+
 @media only screen and (min-width: 601px) {
   .container {
     width: 85%;
   }
+  
 }
 @media only screen and (min-width: 993px) {
   .container {
